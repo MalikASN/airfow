@@ -8,11 +8,9 @@ import pandas as pd
 BUCKET_NAME = "airflow-bucket798"
 AWS_CONN_ID = "aws_default"
 
-# 👇 On supprime "pusher_le_fichier" qui ne servait à rien.
 
-# 👇 On garde celle-ci, elle est parfaite pour la réception
 def recevoir_le_fichier(ti):
-    # Elle va chercher le message envoyé par la task 'process_file'
+  
     file_path = ti.xcom_pull(key='file_path', task_ids='process_file')
     
     if not file_path:
@@ -20,7 +18,7 @@ def recevoir_le_fichier(ti):
     else:
         print(f"✅ Message bien reçu ! Le fichier traité est ici : {file_path}")
 
-# 👇 MODIFICATION IMPORTANTE : Ajout de 'ti' dans les arguments
+
 def traiter_le_fichier(ti):
     hook = S3Hook(aws_conn_id=AWS_CONN_ID)
     
@@ -50,8 +48,7 @@ def traiter_le_fichier(ti):
         replace=True
     )
     
-    # 👇 C'EST ICI QUE LA MAGIE OPÈRE
-    # On envoie l'info "J'ai fini, voici où est le fichier" à Airflow
+
     ti.xcom_push(key='file_path', value=output_path)
     print(f"XCom envoyé : file_path = {output_path}")
 
@@ -75,12 +72,13 @@ with DAG(
     traitement = PythonOperator(
         task_id="process_file",
         python_callable=traiter_le_fichier
-        # Pas besoin de préciser op_args=['ti'], Airflow le fait tout seul
+     
     )
 
     receveur = PythonOperator(
         task_id="receive_file", 
         python_callable=recevoir_le_fichier
     )
+
 
     detecter_fichier >> traitement >> receveur
