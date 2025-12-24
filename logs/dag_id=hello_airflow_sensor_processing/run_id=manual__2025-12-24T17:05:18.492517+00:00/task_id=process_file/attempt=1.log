@@ -1,0 +1,80 @@
+[2025-12-24T17:05:57.564+0000] {logging_mixin.py:188} INFO - Changing /opt/***/logs/dag_id=hello_***_sensor_processing/run_id=manual__2025-12-24T17:05:18.492517+00:00/task_id=process_file permission to 509
+[2025-12-24T17:05:57.566+0000] {logging_mixin.py:188} INFO - Failed to change /opt/***/logs/dag_id=hello_***_sensor_processing/run_id=manual__2025-12-24T17:05:18.492517+00:00/task_id=process_file permission to 509: [Errno 1] Operation not permitted: '/opt/***/logs/dag_id=hello_***_sensor_processing/run_id=manual__2025-12-24T17:05:18.492517+00:00/task_id=process_file'
+[2025-12-24T17:05:57.628+0000] {logging_mixin.py:188} INFO - Changing /opt/***/logs/dag_id=hello_***_sensor_processing/run_id=manual__2025-12-24T17:05:18.492517+00:00/task_id=process_file permission to 509
+[2025-12-24T17:05:57.629+0000] {logging_mixin.py:188} INFO - Failed to change /opt/***/logs/dag_id=hello_***_sensor_processing/run_id=manual__2025-12-24T17:05:18.492517+00:00/task_id=process_file permission to 509: [Errno 1] Operation not permitted: '/opt/***/logs/dag_id=hello_***_sensor_processing/run_id=manual__2025-12-24T17:05:18.492517+00:00/task_id=process_file'
+[2025-12-24T17:05:57.669+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: hello_airflow_sensor_processing.process_file manual__2025-12-24T17:05:18.492517+00:00 [queued]>
+[2025-12-24T17:05:57.681+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: hello_airflow_sensor_processing.process_file manual__2025-12-24T17:05:18.492517+00:00 [queued]>
+[2025-12-24T17:05:57.682+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-12-24T17:05:57.697+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): process_file> on 2025-12-24 17:05:18.492517+00:00
+[2025-12-24T17:05:57.705+0000] {standard_task_runner.py:60} INFO - Started process 1479 to run task
+[2025-12-24T17:05:57.710+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'hello_***_sensor_processing', 'process_file', 'manual__2025-12-24T17:05:18.492517+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/hello_***.py', '--cfg-path', '/tmp/tmpekjhz99i']
+[2025-12-24T17:05:57.711+0000] {standard_task_runner.py:88} INFO - Job 16: Subtask process_file
+[2025-12-24T17:05:57.764+0000] {logging_mixin.py:188} INFO - Changing /opt/***/logs/dag_id=hello_***_sensor_processing/run_id=manual__2025-12-24T17:05:18.492517+00:00/task_id=process_file permission to 509
+[2025-12-24T17:05:57.764+0000] {logging_mixin.py:188} INFO - Failed to change /opt/***/logs/dag_id=hello_***_sensor_processing/run_id=manual__2025-12-24T17:05:18.492517+00:00/task_id=process_file permission to 509: [Errno 1] Operation not permitted: '/opt/***/logs/dag_id=hello_***_sensor_processing/run_id=manual__2025-12-24T17:05:18.492517+00:00/task_id=process_file'
+[2025-12-24T17:05:57.776+0000] {task_command.py:423} INFO - Running <TaskInstance: hello_airflow_sensor_processing.process_file manual__2025-12-24T17:05:18.492517+00:00 [running]> on host 0c92c20f937f
+[2025-12-24T17:05:57.852+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='hello_***_sensor_processing' AIRFLOW_CTX_TASK_ID='process_file' AIRFLOW_CTX_EXECUTION_DATE='2025-12-24T17:05:18.492517+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-24T17:05:18.492517+00:00'
+[2025-12-24T17:05:57.863+0000] {base.py:83} INFO - Using connection ID 'aws_default' for task execution.
+[2025-12-24T17:05:57.865+0000] {connection_wrapper.py:378} INFO - AWS Connection (conn_id='aws_default', conn_type='aws') credentials retrieved from login and password.
+[2025-12-24T17:05:58.612+0000] {logging_mixin.py:188} INFO - Fichier trouvé : customers-100.csv
+[2025-12-24T17:05:58.612+0000] {s3.py:1375} INFO - This function shadows the 'download_file' method of S3 API, but it is not the same. If you want to use the original method from S3 API, please call 'S3Hook.get_conn().download_file()'
+[2025-12-24T17:05:58.613+0000] {s3.py:1381} INFO - Downloading source S3 file from Bucket ***-bucket798 with path customers-100.csv
+[2025-12-24T17:05:59.482+0000] {logging_mixin.py:188} INFO - Fichier téléchargé localement ici : /tmp/***_tmp_dquzmmmy
+[2025-12-24T17:05:59.494+0000] {logging_mixin.py:188} INFO - DataFrame original shape: (100, 12)
+[2025-12-24T17:05:59.500+0000] {logging_mixin.py:188} INFO - Traitement terminé. Résultat sauvegardé sur /tmp/processed_data.csv
+[2025-12-24T17:05:59.521+0000] {logging_mixin.py:188} INFO -    Index      Customer Id  ... Subscription Date                      Website
+0      1  DD37Cf93aecA6Dc  ...        2020-08-24   http://www.stephenson.com/
+1      2  1Ef7b82A4CAAD10  ...        2021-04-23        http://www.hobbs.com/
+2      3  6F94879bDAfE5a6  ...        2020-03-25     http://www.lawrence.com/
+3      4  5Cef8BFA16c5e3c  ...        2020-06-02   http://www.good-lyons.com/
+4      5  053d585Ab6b3159  ...        2021-04-17  https://goodwin-ingram.com/
+
+[5 rows x 12 columns]
+[2025-12-24T17:05:59.522+0000] {logging_mixin.py:188} INFO - Début de l'upload vers S3...
+[2025-12-24T17:05:59.532+0000] {base.py:83} INFO - Using connection ID 'aws_default' for task execution.
+[2025-12-24T17:05:59.533+0000] {connection_wrapper.py:378} INFO - AWS Connection (conn_id='aws_default', conn_type='aws') credentials retrieved from login and password.
+[2025-12-24T17:05:59.946+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/boto3/s3/transfer.py", line 371, in upload_file
+    future.result()
+  File "/home/airflow/.local/lib/python3.8/site-packages/s3transfer/futures.py", line 103, in result
+    return self._coordinator.result()
+  File "/home/airflow/.local/lib/python3.8/site-packages/s3transfer/futures.py", line 266, in result
+    raise self._exception
+  File "/home/airflow/.local/lib/python3.8/site-packages/s3transfer/tasks.py", line 139, in __call__
+    return self._execute_main(kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/s3transfer/tasks.py", line 162, in _execute_main
+    return_value = self._main(**kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/s3transfer/upload.py", line 764, in _main
+    client.put_object(Bucket=bucket, Key=key, Body=body, **extra_args)
+  File "/home/airflow/.local/lib/python3.8/site-packages/botocore/client.py", line 553, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/botocore/client.py", line 1009, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.exceptions.ClientError: An error occurred (AccessDenied) when calling the PutObject operation: User: arn:aws:iam::606584453627:user/afuser is not authorized to perform: s3:PutObject on resource: "arn:aws:s3:::***-bucket798/output/processed_data.csv" because no identity-based policy allows the s3:PutObject action
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/hello_airflow.py", line 62, in traiter_le_fichier
+    hook.load_file(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/amazon/aws/hooks/s3.py", line 137, in wrapper
+    return func(*bound_args.args, **bound_args.kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/amazon/aws/hooks/s3.py", line 91, in wrapper
+    return func(*bound_args.args, **bound_args.kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/amazon/aws/hooks/s3.py", line 1090, in load_file
+    client.upload_file(filename, bucket_name, key, ExtraArgs=extra_args, Config=self.transfer_config)
+  File "/home/airflow/.local/lib/python3.8/site-packages/boto3/s3/inject.py", line 145, in upload_file
+    return transfer.upload_file(
+  File "/home/airflow/.local/lib/python3.8/site-packages/boto3/s3/transfer.py", line 377, in upload_file
+    raise S3UploadFailedError(
+boto3.exceptions.S3UploadFailedError: Failed to upload /tmp/processed_data.csv to ***-bucket798/output/processed_data.csv: An error occurred (AccessDenied) when calling the PutObject operation: User: arn:aws:iam::606584453627:user/afuser is not authorized to perform: s3:PutObject on resource: "arn:aws:s3:::***-bucket798/output/processed_data.csv" because no identity-based policy allows the s3:PutObject action
+[2025-12-24T17:05:59.964+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=hello_***_sensor_processing, task_id=process_file, execution_date=20251224T170518, start_date=20251224T170557, end_date=20251224T170559
+[2025-12-24T17:05:59.979+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 16 for task process_file (Failed to upload /tmp/processed_data.csv to ***-bucket798/output/processed_data.csv: An error occurred (AccessDenied) when calling the PutObject operation: User: arn:aws:iam::606584453627:user/afuser is not authorized to perform: s3:PutObject on resource: "arn:aws:s3:::***-bucket798/output/processed_data.csv" because no identity-based policy allows the s3:PutObject action; 1479)
+[2025-12-24T17:06:00.015+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-12-24T17:06:00.035+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
